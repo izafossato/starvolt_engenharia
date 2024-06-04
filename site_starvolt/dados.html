@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de dados</title>
+</head>
+<body>
+
+  <canvas id="myChart" width="400" height="200"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var sensorData = [10, 20, 30, 25, 40]; // Substitua com seus próprios dados
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Medição 1', 'Medição 2', 'Medição 3', 'Medição 4', 'Medição 5'],
+          datasets: [{
+          label: 'Dados do Sensor',
+          data: sensorData,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAWXPIHpvFG_ftEXEY1oJTTihGBVaFufSw",
+          authDomain: "starvolteng.firebaseapp.com",
+          databaseURL: "https://starvolteng-default-rtdb.firebaseio.com",
+          projectId: "starvolteng",
+          storageBucket: "starvolteng.appspot.com",
+          messagingSenderId: "1015132804776",
+          appId: "1:1015132804776:web:6226b977720d1bb10f149d",
+          measurementId: "G-EN82M60QSR"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+</body>
+</html>
